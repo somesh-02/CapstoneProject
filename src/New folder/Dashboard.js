@@ -26,11 +26,14 @@ const Dashboard = () =>{
         </div>
         <form onSubmit={handleSearch}>
             <input
+            style={{textAlign:'center'}}
             type="text"
             value={query}
+            id="form3Example3c"
+            placeholder="Search..."
             onChange={(e) => setQuery(e.target.value)}
             />
-            <button type="submit">Search</button>
+            <button className="btn btn-success btn-sm" type="submit">Search</button>
         </form>
         {result.map(item =>(
             <div key={item.id}>
@@ -42,17 +45,17 @@ const Dashboard = () =>{
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <p>Description : <small>{item.description}</small></p>
+                                <div><p class="btn btn-info btn-sm" style={{marginBottom:5+'px'}} >Description : </p>{item.description}</div>
+                                    <div><br></br>
+                                    <div><p class="btn btn-secondary btn-sm" style={{marginBottom:5+'px'}}>Manufactured By : </p><b>{item.seller}</b></div>
+                                    </div><br></br>
                                     <div>
-                                    <p>Manufactured By : <small>{item.seller}</small></p>
-                                    </div>
-                                    <div>
-                                        <p>Price : {item.price}</p>
+                                        <p class="btn btn-danger btn-sm" style={{marginBottom:5+'px'}}>Price : <b>{item.price}</b></p>
                                     </div>
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <p style={{paddingRight: 110 + 'px'}}>Available in Stock</p>
-                                        <p style={{paddingRight: 80 + 'px'}}>Faster Delivery</p>
-                                        <button class="btn btn-primary me-md-2" type="button">View Details</button>
+                                        <p style={{paddingRight: 110 + 'px',color:'darkgreen'}}>Available in Stock</p>
+                                        <p style={{paddingRight: 80 + 'px',}}>Faster Delivery</p>
+                                        <Link to='/viewmedicinedetailsuser' className="btn btn-info" >View Details</Link> &nbsp;
                                     </div>
                                 </div>
                             </div>

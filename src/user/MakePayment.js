@@ -48,7 +48,7 @@ const MakePayment = () => {
         <>
             <h2 style={{textAlign:'center',backgroundColor:'antiquewhite',padding:5+'px'}} >Payment Page</h2><br />
             <div style={{backgroundColor:'green',fontSize:20+'px',textAlign:'center',padding:5+'px'}} >Delivery Address</div><br />
-            <table style={{marginLeft:'auto',marginRight:'auto'}} border="1" cellpadding="10px" cellspacing="0">
+            <table style={{marginLeft:'auto',marginRight:'auto',border:'1px solid black'}} cellpadding="10px" cellspacing="0">
                 {address.map(item => (
                     <>
                 <tr><td><strong>C/O : </strong>{address[0].userName}</td></tr>
@@ -74,7 +74,7 @@ const MakePayment = () => {
                     <option value="net">Net Banking</option>
                 </select>
             </div><br />
-            <Link to='/invoice' style={{display:'block',textAlign:'center'}} className="btn btn-outline-primary">Continue With Payment</Link> <br />
+            <Link to='/invoice' className="btn btn-outline-primary">Continue With Payment</Link> <br />
         </>
     )
 }

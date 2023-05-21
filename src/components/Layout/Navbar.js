@@ -35,29 +35,38 @@ const Navbar = (props) => {
                         */}
                     {isLoggedIn && (
                         <>
-                        <Link to="/login" onClick={handleLogout} style={{ marginRight: '1' + 'em' }} className="btn btn-outline-info logout">Logout</Link>
+                        
                         {role == "user" &&(
                             <>
-                            <Link to='/dashboard' style={{ marginRight: '1' + 'em' }} class="btn btn-outline-info">Dashboard</Link>
-                            <Link to='/viewcart' style={{ marginRight: '1' + 'em' }} class="btn btn-outline-info">View Cart</Link>
-                            <Link to='/viewmedicines' style={{ marginRight: '1' + 'em' }} class="btn btn-outline-info">View Medicines</Link>
+                            <Link to='/dashboard' style={{ marginRight: '1' + 'em' }} class="btn btn-info">Dashboard</Link>
+                            <Link to='/viewcart' style={{ marginRight: '1' + 'em' }} class="btn btn-warning">View Cart</Link>
+                            <Link to='/viewmedicines' style={{ marginRight: '1' + 'em' }} class="btn btn-secondary">View Medicines</Link>
                             </>
                         )}
+                        
                             
                             {role == "admin" && (
                                 <>
-                                    <Link to='/viewusers' style={{ marginRight: '1' + 'em' }} class="btn btn-outline-info">View Users</Link>
-                                    <Link to='/viewcategories' style={{ marginRight: '1' + 'em' }} class="btn btn-outline-info">View Categories</Link>
-                                    <Link to='/viewmedicinesadmin' style={{ marginRight: '1' + 'em' }} class="btn btn-outline-info">View Medicines</Link>  
+                                    <Link to='/viewusers' style={{ marginRight: '1' + 'em' }} class="btn btn-info">View Users</Link>
+                                    <Link to='/viewcategories' style={{ marginRight: '1' + 'em' }} class="btn btn-warning">View Categories</Link>
+                                    <Link to='/viewmedicinesadmin' style={{ marginRight: '1' + 'em' }} class="btn btn-secondary">View Medicines</Link>  
                                 </>
                             )}
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item" style={{float:'right'}}><Link to="/login" onClick={handleLogout} style={{ marginRight: '1' + 'em' }} className="btn btn-danger logout">Logout</Link></li>
+                            </ul>
                         </>
                     )}
 
                     {!isLoggedIn && (
                         <>
-                            <Link to='/register' style={{ marginRight: '1' + 'em' }} class="btn btn-outline-secondary">Register</Link>
-                            <Link to='/login' class="btn btn-outline-info">Login</Link>
+                        <Link to='/about' className="btn btn-dark" style={{ marginRight: '1' + 'em' }}>About Us</Link>
+                        <Link to='/contact' className="btn btn-warning" style={{ marginRight: '1' + 'em' }}>Contact Us</Link>
+                        <Link to='/privacy' className="btn btn-danger">Privacy</Link>
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                           <li class="nav-item" style={{float:'right'}}> <Link to='/register' style={{ marginRight: '1' + 'em' }} class="btn btn-success">Register</Link></li>
+                           <li class="nav-item" style={{float:'right'}}> <Link to='/login' class="btn btn-info">Login</Link></li>
+                            </ul>
                         </>
                     )}
                 </div>

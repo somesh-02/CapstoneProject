@@ -65,7 +65,7 @@ const Invoice = () => {
     </tr>
     ))}
     <tr>
-        <td>Orders : </td>
+        <td><strong>Orders : </strong></td>
         <td>
             {cart.map(item => (
                 <>
@@ -73,7 +73,6 @@ const Invoice = () => {
                     <span><strong>Price : </strong>{item.price}</span><br />
                     <span><strong>Quantity : </strong>1</span><br />
                     <span><strong>Seller : </strong>{item.seller}</span><br />
-                    <span><strong>Sub Total : </strong>@(item.Product.Price * item.Quantity)</span>
                     <hr />
                     </>
                     ))}
@@ -85,9 +84,9 @@ const Invoice = () => {
         </tr>
     </table><br /> 
 
-    <Link to='/viewmedicines' class="btn btn-outline-dark" >Continue Ordering</Link>
-    <Link to='/makepayment' class="btn btn-outline-dark">Back to Payment</Link>
-    <Link to='/checkout' class="btn btn-outline-dark">Back to Check Out</Link>
+    <Link to='/viewmedicines' class="btn btn-success" >Continue Ordering</Link> &nbsp;
+    <Link to='/makepayment' class="btn btn-warning">Back to Payment</Link>&nbsp;
+    <Link to='/checkout' class="btn btn-info">Back to Check Out</Link>
     </>
     )
 }
